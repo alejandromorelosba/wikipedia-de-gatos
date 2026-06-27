@@ -1,0 +1,396 @@
+/* ── VARIABLES ── */
+:root {
+    --color-box:      rgba(255, 255, 255, 0.75);
+    --color-titel:    rgb(60, 52, 137);
+    --color-text1:    rgb(26, 26, 26);
+    --color-link:     rgba(150, 215, 45, 0.8);
+    --color-text2:    rgb(113, 43, 19);
+    --color-border:   rgba(180, 210, 225, 1);
+    --color-text-nav: rgb(60, 52, 137);
+
+    --color-botton1:  rgb(26, 26, 26);
+    --color-botton2:  rgb(60, 52, 137);
+    --color-botton3:  rgb(8, 80, 65);
+
+    --transition: 0.2s ease;
+    --radius:     15px;
+    --radius-sm:  8px;
+    --radius-md:  12px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── BODY ── */
+body {
+    line-height: 1.6;
+    font-family: Georgia, serif;
+    background-image: url(../Back/Paw\ Print\ Background\ Pattern.jpg);
+    background-size: 300px;
+    background-repeat: repeat;
+    background-position: center;
+    background-color: #e8f5f2;
+    background-blend-mode: multiply;
+}
+
+/* ── HEADER ── */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 2rem;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
+        url(../Back/Paw\ Print\ Background\ Pattern.jpg) repeat center / 200px;
+    border: 2.5px solid var(--color-botton2);
+    border-radius: var(--radius);
+    transition: opacity var(--transition);
+}
+
+header:hover {
+    opacity: 0.85;
+}
+
+header h2 {
+    color: var(--color-titel);
+    font-size: 1.5rem;
+}
+
+/* ── NAVEGACIÓN ── */
+nav {
+    background-color: var(--color-box);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(100, 50, 120, 0.08);
+}
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 48px;
+    margin: 0;
+    padding: 8px 16px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text-nav);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition), text-decoration var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+nav a:hover {
+    color: var(--color-botton3);
+    text-decoration: underline;
+    text-decoration-style: double;
+}
+
+/* Botón de menú de usuario */
+#btn-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    transition: opacity var(--transition);
+}
+
+#btn-menu:hover {
+    opacity: 0.7;
+}
+
+#btn-menu img {
+    width: 28px;
+    height: 28px;
+}
+
+.li-menu {
+    position: relative;
+}
+
+/* ── MENÚ DESPLEGABLE DE USUARIO ── */
+#menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 180px;
+    background-color: white;
+    border: 1px solid var(--color-border);
+    border-top: 2px solid var(--color-botton2);
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+    padding: 16px 0 12px;
+    z-index: 200;
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: var(--color-text-nav);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    display: block;
+    transition: background-color var(--transition), color var(--transition);
+    border-bottom: none;
+}
+
+#menu a:hover {
+    background-color: rgba(60, 52, 137, 0.1);
+    color: var(--color-botton2);
+    opacity: 1;
+    border-color: transparent;
+}
+
+#btn-cerrar {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--color-text-nav);
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition);
+}
+
+#btn-cerrar:hover {
+    color: var(--color-botton3);
+}
+
+#menu.oculto {
+    display: none;
+}
+
+/* ── MAIN ── */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 57px);
+    padding: 40px 16px;
+}
+
+/* ── CAJA DEL FORMULARIO ── */
+.box {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 36px;
+    background-color: var(--color-box);
+    border-radius: var(--radius-md);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: var(--shadow-card);
+}
+
+/* ── TÍTULO ── */
+.titulo {
+    text-align: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--color-box-one);
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--color-text-main);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ── CAMPOS ── */
+.box-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.box-item label {
+    color: var(--color-text-main);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.box-item label:first-child {
+    margin-top: 0;
+}
+
+.box-item input[type="text"],
+.box-item input[type="email"],
+.box-item input[type="password"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid var(--color-box-two);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    background-color: var(--color-text-main);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.box-item input[type="text"]:focus,
+.box-item input[type="email"]:focus,
+.box-item input[type="password"]:focus {
+    border-color: var(--color-box-two);
+    box-shadow: 0 0 0 3px rgba(242, 146, 29, 0.2);
+}
+
+/* ── BOTÓN ── */
+.button {
+    width: 100%;
+    background-color: var(--color-botton3);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    margin-top: 4px;
+}
+
+.button:hover {
+    background-color: brown;
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* ── LINKS ── */
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link a {
+    text-decoration: none;
+    color: var(--color-box-two);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color var(--transition), text-decoration var(--transition);
+}
+
+.link a:hover {
+    text-decoration: underline;
+    color: var(--color-text-main);
+}
+
+
+
+/* ── FOOTER ── */
+footer {
+    background:
+        linear-gradient(rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 0.92)),
+        url(../Back/Paw\ Print\ Background\ Pattern.jpg) repeat center / 200px;
+    color: #ffffff;
+    margin-top: 2rem;
+    padding: 2.5rem 2rem 1rem;
+    border-top: 2.5px solid var(--color-botton2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.footer-brand h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-links h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.75rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: normal;
+    transition: color var(--transition);
+    border-bottom: none;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.45);
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+
+    -->
+    <link rel="stylesheet" href="css/Contribuir.css">
+    <title>Contribuir - Michipedia</title>
+</head>
+<body>
+
+    <header>
+        <h2>Los gatos más comunes en Colombia</h2>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Razas</a></li>
+            <li><a href="Contribuir.html">Contribuir</a></li>
+
+            <!-- Elemento especial: contiene el botón de cuenta
+                 y el menú desplegable con opciones de sesión -->
+            <li class="li-menu">
+
+                <!-- Botón que activa el menú desplegable.
+                     Usa una imagen de ícono de cuenta. -->
+                <button id="btn-menu" aria-label="Abrir menú de usuario" aria-expanded="false">
+                    <img src="nav/account_circle_25dp_3C3489_FILL0_wght400_GRAD0_opsz24.png" alt="Cuenta">
+                </button>
+
+                <!--
+                    MENÚ DESPLEGABLE DE USUARIO
+                    - Empieza oculto con la clase CSS "oculto"
+                      (display: none).
+                    - JS en main.js remueve/agrega esa clase
+                      al hacer clic en #btn-menu o #btn-cerrar.
+                    - role="dialog" mejora la accesibilidad.
+                -->
+                <div id="menu" class="oculto" role="dialog" aria-label="Menú de usuario">
+
+                    <!-- Botón para cerrar el menú sin elegir opción -->
+                    <button id="btn-cerrar" aria-label="Cerrar menú">✕</button>
+
+                    <ul>
+                        <li><a href="Login/login.html">Iniciar sesión</a></li>
+                        <li><a href="Login/Registrar.html">Registrarse</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+    </nav>
+
+    <!--
+    ============================================================
+        CONTENIDO PRINCIPAL (MAIN)
+        Contiene dos bloques apilados verticalmente:
+          1. El formulario para enviar una contribución.
+          2. La sección de comentarios de otros usuarios.
+    ============================================================
+    -->
+    <main class="main-contribuir">
+
+        <!--
+        --------------------------------------------------------
+            BLOQUE 1: FORMULARIO DE CONTRIBUCIÓN
+            Permite al usuario enviar información sobre una
+            raza de gato para que sea revisada y agregada
+            al catálogo de Michipedia.
+        --------------------------------------------------------
+        -->
+        <section class="box">
+
+            <div class="titulo">
+                <h1>Contribuir</h1>
+                <p class="subtitulo">Ayúdanos a completar el catálogo felino colombiano</p>
+            </div>
+
+            <!--
+                FORMULARIO
+                - action="#": por ahora no envía a ningún servidor.
+                  Debes reemplazar "#" con la URL de tu backend
+                  cuando lo tengas listo.
+                - method="post": envía los datos de forma segura
+                  en el cuerpo de la petición HTTP (no en la URL).
+            -->
+            <form action="#" method="post">
+
+                <!--
+                    CAMPO: NOMBRE DEL CONTRIBUIDOR
+                    - El atributo "for" del label debe coincidir
+                      exactamente con el "id" del input para que
+                      al hacer clic en la etiqueta se active el campo.
+                    - required: el navegador no permite enviar el
+                      formulario si este campo está vacío.
+                -->
+                <div class="box-item">
+                    <label for="nombre">Tu nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ej: María García"
+                        required
+                    >
+                </div>
+
+                <!--
+                    CAMPO: RAZA DEL GATO
+                    Permite indicar el nombre de la raza que
+                    el usuario quiere agregar o corregir.
+                -->
+                <div class="box-item">
+                    <label for="raza">Raza del gato</label>
+                    <input
+                        type="text"
+                        id="raza"
+                        name="raza"
+                        placeholder="Ej: Angora Turco"
+                        required
+                    >
+                </div>
+
+                <!--
+                    CAMPO: DESCRIPCIÓN
+                    Usa <textarea> en lugar de <input> porque
+                    permite escribir textos largos de varias líneas.
+                    - rows="5": altura inicial visible del área de texto.
+                    - resize: vertical (controlado en CSS) para que el
+                      usuario pueda agrandarlo si necesita más espacio.
+                -->
+                <div class="box-item">
+                    <label for="descripcion">Descripción o información</label>
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        rows="5"
+                        placeholder="Cuéntanos sobre el origen, características físicas, temperamento o curiosidades de esta raza..."
+                        required
+                    ></textarea>
+                </div>
+
+                <!--
+                    CAMPO: FUENTE / REFERENCIA
+                    Opcional. Permite al usuario indicar de dónde
+                    obtuvo la información para verificar su veracidad.
+                -->
+                <div class="box-item">
+                    <label for="fuente">Fuente o referencia <span class="opcional">(opcional)</span></label>
+                    <input
+                        type="url"
+                        id="fuente"
+                        name="fuente"
+                        placeholder="https://..."
+                    >
+                </div>
+
+                <!--
+                    BOTÓN DE ENVÍO
+                    - type="submit": al hacer clic, el navegador
+                      valida todos los campos "required" y luego
+                      envía el formulario al servidor indicado en "action".
+                -->
+                <div class="box-item">
+                    <button type="submit" class="button">Enviar contribución</button>
+                </div>
+
+            </form>
+
+            <!-- Link secundario para usuarios que ya tienen cuenta -->
+            <div class="link">
+                <a href="Login/login.html">¿Ya tienes cuenta? Iniciar sesión</a>
+            </div>
+
+        </section>
+
+        <!--
+        --------------------------------------------------------
+            BLOQUE 2: SECCIÓN DE COMENTARIOS
+            Muestra los comentarios que otros usuarios han
+            dejado previamente.
+            En un proyecto real, estos comentarios vendrían
+            de una base de datos y se generarían dinámicamente
+            con JavaScript o un lenguaje de servidor (PHP,
+            Python, Node.js, etc.).
+            Por ahora están escritos directamente en el HTML
+            como ejemplo visual.
+        --------------------------------------------------------
+        -->
+        <section class="comentarios-seccion">
+
+            <div class="titulo">
+                <h2>Comentarios de la comunidad</h2>
+                <p class="subtitulo">Lo que otros amantes de los gatos han compartido</p>
+            </div>
+
+            <!--
+                LISTA DE COMENTARIOS
+                Cada comentario es un <article> porque representa
+                una unidad de contenido independiente.
+            -->
+            <div class="comentarios-lista">
+
+                <!--
+                    COMENTARIO INDIVIDUAL
+                    Estructura de cada tarjeta:
+                      - .comentario-cabeza: avatar + nombre + fecha
+                      - .comentario-cuerpo: el texto del comentario
+                      - .comentario-raza: etiqueta de la raza mencionada
+                -->
+                <article class="comentario-card">
+                    <div class="comentario-cabeza">
+                        <!-- Avatar generado con las iniciales del usuario -->
+                        <div class="avatar">LM</div>
+                        <div>
+                            <strong>Laura Martínez</strong>
+                            <time datetime="2025-03-15">15 de marzo, 2025</time>
+                        </div>
+                    </div>
+                    <p class="comentario-cuerpo">
+                        El gato criollo colombiano es increíblemente adaptable. El mío vive en un
+                        apartamento en Bogotá y es muy tranquilo. ¡Deberían agregar más info sobre
+                        su comportamiento en altura!
+                    </p>
+                    <span class="comentario-raza">🐱 Gato Criollo</span>
+                </article>
+
+                <article class="comentario-card">
+                    <div class="comentario-cabeza">
+                        <div class="avatar">CR</div>
+                        <div>
+                            <strong>Carlos Restrepo</strong>
+                            <time datetime="2025-04-02">2 de abril, 2025</time>
+                        </div>
+                    </div>
+                    <p class="comentario-cuerpo">
+                        Tengo un Siamés desde hace 3 años. Son muy vocales y cariñosos, pero
+                        necesitan mucha atención. Me gustaría que la página incluyera consejos
+                        de cuidado específicos para el clima cálido de la Costa Caribe.
+                    </p>
+                    <span class="comentario-raza">🐱 Siamés</span>
+                </article>
+
+                <article class="comentario-card">
+                    <div class="comentario-cabeza">
+                        <div class="avatar">VP</div>
+                        <div>
+                            <strong>Valentina Pérez</strong>
+                            <time datetime="2025-04-20">20 de abril, 2025</time>
+                        </div>
+                    </div>
+                    <p class="comentario-cuerpo">
+                        ¡Excelente iniciativa! Trabajo en una clínica veterinaria en Medellín
+                        y con gusto puedo contribuir con información técnica sobre las razas más
+                        comunes que atendemos. ¿Cómo me contacto con el equipo de Michipedia?
+                    </p>
+                    <span class="comentario-raza">🐱 Varias razas</span>
+                </article>
+
+            </div>
+            <!-- fin .comentarios-lista -->
+
+        </section>
+        <!-- fin sección de comentarios -->
+
+    </main>
+    <!-- fin main -->
+
+    <!--
+    ============================================================
+        PIE DE PÁGINA (FOOTER)
+        Siempre va al final del <body>.
+        Contiene:
+          - .footer-brand: nombre y slogan del sitio.
+          - .footer-links: columnas de enlaces rápidos.
+          - .footer-bottom: copyright.
+    ============================================================
+    -->
+    <footer>
+        <div class="footer-content">
+
+            <!-- Marca del sitio -->
+            <div class="footer-brand">
+                <h3>Michipedia 🐾</h3>
+                <p>Tu enciclopedia felina colombiana</p>
+            </div>
+
+            <!-- Columna de enlaces: razas -->
+            <div class="footer-links">
+                <h4>Razas</h4>
+                <ul>
+                    <li><a href="#">Gato Criollo</a></li>
+                    <li><a href="#">Persa</a></li>
+                    <li><a href="#">Siamés</a></li>
+                    <li><a href="#">Maine Coon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna de enlaces: información del sitio -->
+            <div class="footer-links">
+                <h4>Acerca de</h4>
+                <ul>
+                    <li><a href="#">Sobre Michipedia</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="Contribuir.html">Contribuir</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Línea de derechos de autor -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Michipedia — Hecho con ❤️ para los amantes de los gatos en Colombia</p>
+        </div>
+    </footer>
+
+    <!--
+        JAVASCRIPT PRINCIPAL
+        Se carga al FINAL del body (no en el <head>) para que
+        el HTML ya esté cargado cuando el script intente
+        encontrar elementos como #btn-menu o #menu.
+        Si se pusiera en el <head>, el script no encontraría
+        esos elementos porque aún no habrían sido creados.
+    -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

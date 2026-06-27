@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <title>Michipedia</title>
+</head>
+<body>
+
+<!--Cabecera de la pagina-->
+<header>
+    <h2>Los gatos más comunes en Colombia</h2>
+</header>
+
+<!--barra de navegacion-->
+<nav>
+    <ul>
+        <li><a href="index.html">Razas</a></li>
+        <li><a href="Contribuir.html">Contribuir</a></li>
+        <li class="li-menu">
+            <button id="btn-menu" aria-label="Abrir menú de usuario" aria-expanded="false">
+                <img src="nav/account_circle_25dp_3C3489_FILL0_wght400_GRAD0_opsz24.png" alt="Cuenta">
+            </button>
+            <div id="menu" class="oculto" role="dialog" aria-label="Menú de usuario">
+                <button id="btn-cerrar" aria-label="Cerrar menú">✕</button>
+                <ul>
+                    <li><a href="Login/login.html">Iniciar sesión</a></li>
+                    <li><a href="Login/Registrar.html">Registrarse</a></li>
+                    <li><a href="">Ayuda</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<!--Contenido principal-->
+<main>
+
+    <div class="titulo">
+        <h1>Bienvenido a la wiki de los gatos</h1>
+    </div>
+
+    <div class="Sub-titulo">
+        <p>Una página realizada para demostrar los gatos más comunes que existen en el país de Colombia.</p>
+    </div>
+
+    <div class="cat-list">
+        <ol>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Gato Criollo / Mestizo</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/gato criollo.jpg" alt="Gato criollo colombiano de pelaje variado">
+                        <p>Sin duda, es el más popular en Colombia. No es una raza pura, sino la mezcla de varias razas.
+                        Son extremadamente resistentes a enfermedades gracias a su diversidad genética, adaptables y pueden vivir 15 años o más con buenos cuidados.
+                        Vienen en todos los colores, tamaños y pelajes.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/gato-comun-europeo" target="_blank" rel="noopener">Características y Cuidados — Purina</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Felis_silvestris_catus" target="_blank" rel="noopener">Información General — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Persa</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/gato persa.jpg" alt="Gato persa con pelaje largo y sedoso">
+                        <p>Muy popular por su pelaje largo y sedoso, cara redonda y aplanada, y temperamento tranquilo.
+                        Son de tamaño mediano a grande (machos hasta ~7 kg) y suelen preferir ser la única mascota en casa, aunque son muy apegados a sus dueños.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/persa" target="_blank" rel="noopener">Características y Cuidados — Purina</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Gato_persa" target="_blank" rel="noopener">Historia y Estándar — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Siamés</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/Gato siames.jpg" alt="Gato siamés con ojos azules y puntos de color">
+                        <p>Admirado por sus ojos azules profundos, cuerpo delgado y elegante, y puntos de color en cara, orejas, patas y cola.
+                        Es muy activo, sociable, vocal y disfruta la atención. Se comunica con una gran variedad de maullidos.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/siames" target="_blank" rel="noopener">Todo lo que necesitas saber — Purina</a>
+                            <a class="btn-info" href="https://www.hillspet.es/cat-care/cat-breeds/siamese" target="_blank" rel="noopener">Características y Personalidad — Hill's Pet</a>
+                            <a class="btn-info" href="https://www.tiendanimal.es/articulos/gato-siames-curiosidades-y-caracteristicas/" target="_blank" rel="noopener">Curiosidades — TiendAnimal</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Gato_siam%C3%A9s" target="_blank" rel="noopener">Siamés — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Bengalí</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/Gato bengali.jpg" alt="Gato bengalí con manchas tipo leopardo">
+                        <p>De origen estadounidense, resultado del cruce entre gato doméstico y gata leopardo.
+                        Tiene pelaje corto con manchas que recuerdan a un tigrillo.
+                        Son hiperactivos, muy inteligentes, curiosos y altamente sociables. Necesitan espacio para trepar y jugar.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/bengali" target="_blank" rel="noopener">Información Completa — Purina</a>
+                            <a class="btn-info" href="https://www.gatobengali.com/caracteristicas-del-gato-bengali.php" target="_blank" rel="noopener">Características — gatobengali.com</a>
+                            <a class="btn-info" href="https://www.hillspet.es/cat-care/cat-breeds/bengal" target="_blank" rel="noopener">Características y Personalidad — Hill's Pet</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Bengala_(gato)" target="_blank" rel="noopener">Bengala — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Maine Coon</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/gato Maine Coon.jpg" alt="Gato Maine Coon de gran tamaño con pelaje semilargo">
+                        <p>Una de las razas más grandes, puede llegar a pesar hasta 14 kg.
+                        Originario de Maine, EE.UU., es afable, cariñoso y excelente para convivir con niños gracias a su paciencia.
+                        Destaca por su pelaje semilargo y orejas con mechones.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/maine-coon" target="_blank" rel="noopener">Características — Purina</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Maine_Coon" target="_blank" rel="noopener">Maine Coon — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Esfinge (Sphynx)</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/Esfinge (Sphynx).jpg" alt="Gato Sphynx sin pelo con orejas grandes">
+                        <p>Raza canadiense sin pelo (o con una fina capa de vello), con orejas grandes y piel arrugada.
+                        Aunque su apariencia sorprende, es cariñosa, juguetona y muy apegada a su familia, especialmente con los niños.
+                        Requiere cuidados especiales de la piel.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.mirringo.com.co/actualidad-gatuna/curiosidades-de-los-gatos-esfinges" target="_blank" rel="noopener">Curiosidades — Mirringo Colombia</a>
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/sphynx" target="_blank" rel="noopener">Características y Cuidados — Purina</a>
+                            <a class="btn-info" href="https://www.elcorteingles.es/contenidos/cuidado-de-mascotas/gato-sphinx/" target="_blank" rel="noopener">Características — El Corte Inglés</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Sphynx" target="_blank" rel="noopener">Sphynx — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Himalayo</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/Himalaya.webp" alt="Gato himalayo con pelaje largo y cara aplanada">
+                        <p>De tamaño mediano a grande, con piernas cortas y huesos fuertes.
+                        Puede pesar hasta 10 kg en machos. Es alegre pero selectivo con las personas a las que brinda cariño.
+                        No le gustan los entornos ruidosos y prefiere la tranquilidad.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.rover.com/es/blog/gato-himalayo/" target="_blank" rel="noopener">Todo lo que necesitas saber — Rover</a>
+                            <a class="btn-info" href="https://www.purina.com/es/gatos/gato-razas/himalayo" target="_blank" rel="noopener">Información de la Raza — Purina</a>
+                            <a class="btn-info" href="https://www.tiendanimal.es/articulos/himalayo/" target="_blank" rel="noopener">Consejos y Cuidados — TiendAnimal</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Azul Ruso</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/Russian Blue.2.jpg" alt="Gato azul ruso con pelaje gris azulado y ojos verdes">
+                        <p>Pelaje corto de color gris-azulado intenso y ojos verdes esmeralda cautivadores.
+                        De carácter tranquilo y cariñoso con su familia, pero tímido con extraños.
+                        Es inteligente y puede aprender trucos si le resultan divertidos.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.hillspet.es/cat-care/cat-breeds/russian-blue" target="_blank" rel="noopener">Características y Personalidad — Hill's Pet</a>
+                            <a class="btn-info" href="https://www.rover.com/es/blog/gato-azul-ruso/" target="_blank" rel="noopener">Guía Definitiva — Rover</a>
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/azul-ruso" target="_blank" rel="noopener">Todo sobre la Raza — Purina</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>Ragdoll</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/Ragdoll-1.webp" alt="Gato ragdoll con ojos azules y pelaje semilargo">
+                        <p>Conocido por relajarse completamente al ser cargado (de ahí su nombre).
+                        Tiene ojos azules intensos, pelaje semilargo y es extremadamente dócil y cariñoso.
+                        Es una raza muy buscada por familias por su temperamento apacible.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.purina.es/encuentra-mascota/razas-de-gato/ragdoll" target="_blank" rel="noopener">Características — Purina</a>
+                            <a class="btn-info" href="https://es.wikipedia.org/wiki/Ragdoll" target="_blank" rel="noopener">Ragdoll — Wikipedia</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cat-header" onclick="toggleCat(this)">
+                    <h3>British Shorthair</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-body-inner">
+                        <img src="img/gato-british_8086d5da_230601112402_1200x630.jpg" alt="Gato british shorthair robusto de pelaje corto azul grisáceo">
+                        <p>Cuerpo robusto y musculoso, cara redonda y pelaje corto y denso.
+                        Es tranquilo, independiente y poco demandante, ideal para quienes buscan un compañero sereno.
+                        Su pelaje más típico es el azul-grisáceo, aunque existen en varios colores.</p>
+                        <div class="cat-links">
+                            <a class="btn-info" href="https://www.santevet.es/raza/british-shorthair" target="_blank" rel="noopener">Temperamento y Cuidados — Santévet</a>
+                            <a class="btn-info" href="https://www.hillspet.es/cat-care/cat-breeds/british-shorthair" target="_blank" rel="noopener">Características — Hill's Pet</a>
+                            <a class="btn-info" href="https://www.anicura.es/consejos-de-salud/gato/listado-de-razas-de-gatos/british-shorthair/" target="_blank" rel="noopener">British Shorthair — AniCura</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ol>
+    </div>
+
+</main>
+
+<!-- Footer de la pagina -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>Michipedia 🐾</h3>
+            <p>Tu enciclopedia felina colombiana</p>
+        </div>
+        <div class="footer-links">
+            <h4>Razas</h4>
+            <ul>
+                <li><a href="#">Gato Criollo</a></li>
+                <li><a href="#">Persa</a></li>
+                <li><a href="#">Siamés</a></li>
+                <li><a href="#">Maine Coon</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Acerca de</h4>
+            <ul>
+                <li><a href="#">Sobre Michipedia</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="Contribuir.html">Contribuir</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Michipedia — Hecho con ❤️ para los amantes de los gatos en Colombia</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

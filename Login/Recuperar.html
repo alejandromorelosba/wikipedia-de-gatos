@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/Registre.css">
+    <title>Recuperar-michipedia</title>
+    
+</head>
+<body>
+    <!--Cabecera de la pagina-->
+<header>
+    <h2>Los gatos más comunes en Colombia</h2>
+</header>
+
+<!--barra de navegacion-->
+<nav>
+    <ul>
+        <li><a href="../index.html">Razas</a></li>
+        <li><a href="">Contribuir</a></li>
+        <li class="li-menu">
+            <button id="btn-menu" aria-label="Abrir menú de usuario" aria-expanded="false">
+                <img src="../nav/account_circle_25dp_3C3489_FILL0_wght400_GRAD0_opsz24.png" alt="Cuenta">
+            </button>
+            <div id="menu" class="oculto" role="dialog" aria-label="Menú de usuario">
+                <button id="btn-cerrar" aria-label="Cerrar menú">✕</button>
+                <ul>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                    <li><a href="Registrar.html">Registrarse</a></li>
+                    <li><a href="">Ayuda</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+
+    <!-- Formulario de Login -->
+    <main>
+        <section class="box">
+
+            <!-- Título -->
+            <div class="titulo">
+                <h1>Iniciar Sesión</h1>
+            </div>
+
+            <!-- Campos -->
+            <div class="box-item">
+
+                <label for="text">nombre</label>
+                <input type="text" id="text" name="text" placeholder="Tu Nombre">
+
+                <label for="password">nueva Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="nueva contraseña">
+
+                <label for="password">Confirmar Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="confirmar contraseña">
+
+                
+            </div>
+
+            <!-- Botón principal -->
+            <div class="box-item">
+                <button type="button" class="button">Iniciar sesión</button>
+            </div>
+
+            <!-- Links secundarios -->
+            <div class="link">
+
+                <a href="login.html">¿Ya tienes cuenta? inicar sesion</a>
+            </div>
+
+        </section>
+    </main>
+
+
+<!-- Footer de la pagina -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>Michipedia 🐾</h3>
+            <p>Tu enciclopedia felina colombiana</p>
+        </div>
+        <div class="footer-links">
+            <h4>Razas</h4>
+            <ul>
+                <li><a href="#">Gato Criollo</a></li>
+                <li><a href="#">Persa</a></li>
+                <li><a href="#">Siamés</a></li>
+                <li><a href="#">Maine Coon</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Acerca de</h4>
+            <ul>
+                <li><a href="#">Sobre Michipedia</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Contribuir</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Michipedia — Hecho con ❤️ para los amantes de los gatos en Colombia</p>
+    </div>
+</footer>
+
+<script src="/JS/main.js"></script>
+
+</body>
+</html>
